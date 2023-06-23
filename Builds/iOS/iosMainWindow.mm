@@ -14,7 +14,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "NativeNavigation-Swift.h"
 #include "iosMainWindow.h"
-#include "MainComponent.h"
+#include "../../Source/MainComponent.h"
 
 
 //-----------------------------------------------------------
@@ -33,7 +33,7 @@ MainWindow::MainWindow (String name)  : DocumentWindow (name,
 
     JuceViewController* juceViewController = [[JuceViewController alloc] initWithContentView: juceView];
     
-    juceViewController.contentView = juceView;
+    //juceViewController.contentView = juceView;
     UINavigationController* detailNavController;
     
     MasterViewController* masterViewController = [[MasterViewController alloc] init];
@@ -48,7 +48,7 @@ MainWindow::MainWindow (String name)  : DocumentWindow (name,
     }
     else
     {
-        masterViewController.juceViewController = juceViewController;
+        //masterViewController.juceViewController = juceViewController;
         detailNavController = [[UINavigationController alloc] initWithRootViewController: masterViewController];
         [detailNavController pushViewController:juceViewController animated:false];
         [window setRootViewController:detailNavController];

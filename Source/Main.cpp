@@ -11,7 +11,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 #if JUCE_IOS
-#include "iosMainWindow.h"
+#include "../Builds/iOS/iosMainWindow.h"
 #else
 #include "MainWindow.h"
 #endif

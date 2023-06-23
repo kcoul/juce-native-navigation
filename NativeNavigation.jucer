@@ -39,9 +39,9 @@
     <XCODE_IPHONE targetFolder="Builds/iOS" iosDevelopmentTeamID="NQ2VLM7NM7">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" iosCompatibility="default" isDebug="1" optimisation="1"
-                       targetName="NativeNavigation" customXcodeFlags="SWIFT_VERSION = 4.0,&#10;SWIFT_OBJC_BRIDGING_HEADER = NativeNavigation-Bridging-Header.h"/>
+                       targetName="NativeNavigation" customXcodeFlags="SWIFT_VERSION = 4.0,&#10;SWIFT_OBJC_BRIDGING_HEADER = NativeNavigation-Bridging-Header.h,&#10;SWIFT_PRECOMPILE_BRIDGING_HEADER = No"/>
         <CONFIGURATION name="Release" iosCompatibility="default" isDebug="0" optimisation="3"
-                       targetName="NativeNavigation" customXcodeFlags="SWIFT_VERSION = 4.0,&#10;SWIFT_OBJC_BRIDGING_HEADER = NativeNavigation-Bridging-Header.h"/>
+                       targetName="NativeNavigation" customXcodeFlags="SWIFT_VERSION = 4.0,&#10;SWIFT_OBJC_BRIDGING_HEADER = NativeNavigation-Bridging-Header.h,&#10;SWIFT_PRECOMPILE_BRIDGING_HEADER = No"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../juce/modules"/>
@@ -50,7 +50,6 @@
         <MODULEPATH id="juce_data_structures" path="../../juce/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../../juce/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../juce/modules"/>
-        <MODULEPATH id="juce_opengl" path="../../juce/modules"/>
       </MODULEPATHS>
     </XCODE_IPHONE>
     <ANDROIDSTUDIO androidVersionCode="1" androidActivityClass="com.codegarden.nativenavigation.JuceActivity"
@@ -74,7 +73,6 @@
         <MODULEPATH id="juce_events" path="../../juce/modules"/>
         <MODULEPATH id="juce_data_structures" path="../../juce/modules"/>
         <MODULEPATH id="juce_core" path="../../juce/modules"/>
-        <MODULEPATH id="juce_opengl" path="../../juce/modules"/>
       </MODULEPATHS>
     </ANDROIDSTUDIO>
     <XCODE_MAC targetFolder="Builds/MacOSX">
@@ -91,7 +89,6 @@
         <MODULEPATH id="juce_events" path="../../juce/modules"/>
         <MODULEPATH id="juce_data_structures" path="../../juce/modules"/>
         <MODULEPATH id="juce_core" path="../../juce/modules"/>
-        <MODULEPATH id="juce_opengl" path="../../juce/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
   </EXPORTFORMATS>
@@ -102,7 +99,6 @@
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <JUCEOPTIONS/>
   <LIVE_SETTINGS>

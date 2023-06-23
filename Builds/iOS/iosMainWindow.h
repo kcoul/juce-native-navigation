@@ -10,7 +10,7 @@
 #define JustTuner_iosMainWindow_h
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "MainComponent.h"
+#include "../../Source/MainComponent.h"
 
 
 //==============================================================================

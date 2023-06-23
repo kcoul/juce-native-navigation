@@ -22,9 +22,7 @@
 		A01494C0C16F56C4AFF0FA06 /* DataControllerObjC.mm */ = {isa = PBXBuildFile; fileRef = 2CA3FCA994B06E22C30AAF9F; };
 		A2D03BBB293722EE6C4F1890 /* Foundation.framework */ = {isa = PBXBuildFile; fileRef = 02DE0E637463CC2DB082BCF0; };
 		AACAA472B2B558547DD80C5C /* include_juce_gui_basics.mm */ = {isa = PBXBuildFile; fileRef = CB84857B789A7E6EB92C7161; };
-		B97F71AB37ED4BED7B77A35D /* include_juce_opengl.mm */ = {isa = PBXBuildFile; fileRef = C737D63DFE55BB209AB2E11C; };
 		CB334B17EBD262C8C07584CE /* MainComponent.cpp */ = {isa = PBXBuildFile; fileRef = C6E348C1E4E413F3F8DDFA4A; };
-		D3D913C9656EAE9A5F1DE932 /* OpenGL.framework */ = {isa = PBXBuildFile; fileRef = C5F663356E7256F82F59F6E6; };
 		E94E0758361636436ED7505D /* MasterViewController.swift */ = {isa = PBXBuildFile; fileRef = 0C7DD54010E7F8D01B89353E; };
 		EF456C678AC64E7830F311EA /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = BEFD99A4720E02F3DB161951; };
 		F2E2EC466AA14DB16B04D47D /* Cocoa.framework */ = {isa = PBXBuildFile; fileRef = 45090B40862465A59BF79A60; };
@@ -62,15 +60,12 @@
 		84E734FA76FE9AE5031BEA02 /* MasterViewController.xib */ /* MasterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MasterViewController.xib; path = ../iOS/MasterViewController.xib; sourceTree = SOURCE_ROOT; };
 		84E8856EA6D4BB87CB87347C /* include_juce_gui_extra.mm */ /* include_juce_gui_extra.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_extra.mm; path = ../../JuceLibraryCode/include_juce_gui_extra.mm; sourceTree = SOURCE_ROOT; };
 		8B9BA30FDE81F2D6317B28A1 /* iosMainWindow.mm */ /* iosMainWindow.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = iosMainWindow.mm; path = ../iOS/iosMainWindow.mm; sourceTree = SOURCE_ROOT; };
-		919E053DF8FF2C20A4A410CC /* juce_opengl */ /* juce_opengl */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_opengl; path = "~/repos/JUCE/modules/juce_opengl"; sourceTree = "<absolute>"; };
 		A094A8B6A46CF12C2EBD1F50 /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
 		A1273F0FE3DAEB681B103079 /* WebKit.framework */ /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B9C579D46EDE61793D4D1228 /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = "~/repos/JUCE/modules/juce_gui_basics"; sourceTree = "<absolute>"; };
 		BEFD99A4720E02F3DB161951 /* include_juce_events.mm */ /* include_juce_events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_events.mm; path = ../../JuceLibraryCode/include_juce_events.mm; sourceTree = SOURCE_ROOT; };
 		C3AD77A0811DB733F1102C43 /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		C5F663356E7256F82F59F6E6 /* OpenGL.framework */ /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C6E348C1E4E413F3F8DDFA4A /* MainComponent.cpp */ /* MainComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MainComponent.cpp; path = ../../Source/MainComponent.cpp; sourceTree = SOURCE_ROOT; };
-		C737D63DFE55BB209AB2E11C /* include_juce_opengl.mm */ /* include_juce_opengl.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_opengl.mm; path = ../../JuceLibraryCode/include_juce_opengl.mm; sourceTree = SOURCE_ROOT; };
 		CA63002E00E2FAA4949EA94A /* Info-App.plist */ /* Info-App.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-App.plist"; path = "Info-App.plist"; sourceTree = SOURCE_ROOT; };
 		CB84857B789A7E6EB92C7161 /* include_juce_gui_basics.mm */ /* include_juce_gui_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_basics.mm; path = ../../JuceLibraryCode/include_juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
 		E0E8FEE0C4F6DEB74EEB51DF /* include_juce_graphics.mm */ /* include_juce_graphics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_graphics.mm; path = ../../JuceLibraryCode/include_juce_graphics.mm; sourceTree = SOURCE_ROOT; };
@@ -87,7 +82,6 @@
 				F2E2EC466AA14DB16B04D47D,
 				A2D03BBB293722EE6C4F1890,
 				17E5928F67BC9740D4BE23DE,
-				D3D913C9656EAE9A5F1DE932,
 				59682FA42D71D139D6328224,
 				96F83B00359ABC1F775A2EDF,
 			);
@@ -108,7 +102,6 @@
 				E0E8FEE0C4F6DEB74EEB51DF,
 				CB84857B789A7E6EB92C7161,
 				84E8856EA6D4BB87CB87347C,
-				C737D63DFE55BB209AB2E11C,
 				F07229BC8FA37FA976BF0D94,
 			);
 			name = "JUCE Library Code";
@@ -120,7 +113,6 @@
 				45090B40862465A59BF79A60,
 				02DE0E637463CC2DB082BCF0,
 				C3AD77A0811DB733F1102C43,
-				C5F663356E7256F82F59F6E6,
 				F8D5769ED6664A34DA4DD5A8,
 				A1273F0FE3DAEB681B103079,
 			);
@@ -205,7 +197,6 @@
 				36CE97E43C34C13866F276E4,
 				B9C579D46EDE61793D4D1228,
 				02DEB325A600DA7351FE771C,
-				919E053DF8FF2C20A4A410CC,
 			);
 			name = "JUCE Modules";
 			sourceTree = "<group>";
@@ -310,7 +301,6 @@
 				833CC811855030221848B50D,
 				AACAA472B2B558547DD80C5C,
 				3543A59B2EECBFE346B9976B,
-				B97F71AB37ED4BED7B77A35D,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +350,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.nativeNavigation;
 				PRODUCT_NAME = "NativeNavigation";
 				USE_HEADERMAP = NO;
-				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = OpenGL;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
 			};
 			name = Release;
@@ -455,7 +444,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.nativeNavigation;
 				PRODUCT_NAME = "NativeNavigation";
 				USE_HEADERMAP = NO;
-				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = OpenGL;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
 			};
 			name = Debug;

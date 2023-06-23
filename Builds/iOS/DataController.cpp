@@ -8,8 +8,8 @@
 
 #include "JuceHeader.h"
 #include "DataController.h"
-#include "MainComponent.h"
-#include "Data.h"
+#include "../../Source/MainComponent.h"
+#include "../../Source/Data.h"
 
 /**
  * Methods to be called from Objective-C / Swift

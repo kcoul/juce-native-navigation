@@ -26,8 +26,6 @@
 		A24E4BEB51BE6EDDC05F0218 /* DataController.cpp */ = {isa = PBXBuildFile; fileRef = 5A07156CA633DDC36369A087; };
 		A2D03BBB293722EE6C4F1890 /* Foundation.framework */ = {isa = PBXBuildFile; fileRef = 02DE0E637463CC2DB082BCF0; };
 		AACAA472B2B558547DD80C5C /* include_juce_gui_basics.mm */ = {isa = PBXBuildFile; fileRef = CB84857B789A7E6EB92C7161; };
-		AB0EB4B9E232461E419A7251 /* OpenGLES.framework */ = {isa = PBXBuildFile; fileRef = 0567F9BA2315A4B9029E7BB6; };
-		B97F71AB37ED4BED7B77A35D /* include_juce_opengl.mm */ = {isa = PBXBuildFile; fileRef = C737D63DFE55BB209AB2E11C; };
 		C78D7E2C3C9E2A225EE88E1A /* JuceViewController.swift */ = {isa = PBXBuildFile; fileRef = C406CE029CEBB57A815D42BB; };
 		CB334B17EBD262C8C07584CE /* MainComponent.cpp */ = {isa = PBXBuildFile; fileRef = C6E348C1E4E413F3F8DDFA4A; };
 		DE681DF74CFC4AB8AAB329C7 /* Message.swift */ = {isa = PBXBuildFile; fileRef = B77CD4FF93E327770D14CDD8; };
@@ -41,7 +39,6 @@
 		02A9F9A39F3024C563F693BF /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
 		02DE0E637463CC2DB082BCF0 /* Foundation.framework */ /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		02DEB325A600DA7351FE771C /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = "~/repos/JUCE/modules/juce_gui_extra"; sourceTree = "<absolute>"; };
-		0567F9BA2315A4B9029E7BB6 /* OpenGLES.framework */ /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		07949CC9FC448288A0CCF6F1 /* Data.h */ /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Data.h; path = ../../Source/Data.h; sourceTree = SOURCE_ROOT; };
 		0AA8EB8774D676B0A517B358 /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = "~/repos/JUCE/modules/juce_core"; sourceTree = "<absolute>"; };
 		0EEB80135674A625D982F986 /* BinaryData.cpp */ /* BinaryData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = SOURCE_ROOT; };
@@ -65,7 +62,6 @@
 		84C2234F816B2AF407789596 /* Main.cpp */ /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = ../../Source/Main.cpp; sourceTree = SOURCE_ROOT; };
 		84E8856EA6D4BB87CB87347C /* include_juce_gui_extra.mm */ /* include_juce_gui_extra.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_extra.mm; path = ../../JuceLibraryCode/include_juce_gui_extra.mm; sourceTree = SOURCE_ROOT; };
 		86AD7C8E8CC0C633FC381844 /* LaunchScreen.storyboard */ /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		919E053DF8FF2C20A4A410CC /* juce_opengl */ /* juce_opengl */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_opengl; path = "~/repos/JUCE/modules/juce_opengl"; sourceTree = "<absolute>"; };
 		9F598B56018F614F175F3E9C /* NativeNavigation-Bridging-Header.h */ /* NativeNavigation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NativeNavigation-Bridging-Header.h"; path = "NativeNavigation-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		A094A8B6A46CF12C2EBD1F50 /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
 		A1273F0FE3DAEB681B103079 /* WebKit.framework */ /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -75,7 +71,6 @@
 		BEFD99A4720E02F3DB161951 /* include_juce_events.mm */ /* include_juce_events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_events.mm; path = ../../JuceLibraryCode/include_juce_events.mm; sourceTree = SOURCE_ROOT; };
 		C406CE029CEBB57A815D42BB /* JuceViewController.swift */ /* JuceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = file.swift; name = JuceViewController.swift; path = JuceViewController.swift; sourceTree = SOURCE_ROOT; };
 		C6E348C1E4E413F3F8DDFA4A /* MainComponent.cpp */ /* MainComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MainComponent.cpp; path = ../../Source/MainComponent.cpp; sourceTree = SOURCE_ROOT; };
-		C737D63DFE55BB209AB2E11C /* include_juce_opengl.mm */ /* include_juce_opengl.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_opengl.mm; path = ../../JuceLibraryCode/include_juce_opengl.mm; sourceTree = SOURCE_ROOT; };
 		CA63002E00E2FAA4949EA94A /* Info-App.plist */ /* Info-App.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-App.plist"; path = "Info-App.plist"; sourceTree = SOURCE_ROOT; };
 		CB84857B789A7E6EB92C7161 /* include_juce_gui_basics.mm */ /* include_juce_gui_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_basics.mm; path = ../../JuceLibraryCode/include_juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
 		D365763FECF0FD5DE794DB17 /* UIKit.framework */ /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -97,7 +92,6 @@
 				22898879DE4693BF14435B52,
 				429D0ECE8AD728253FDD0601,
 				A2D03BBB293722EE6C4F1890,
-				AB0EB4B9E232461E419A7251,
 				59682FA42D71D139D6328224,
 				495B971B6955973E83DC2659,
 				96F83B00359ABC1F775A2EDF,
@@ -119,7 +113,6 @@
 				E0E8FEE0C4F6DEB74EEB51DF,
 				CB84857B789A7E6EB92C7161,
 				84E8856EA6D4BB87CB87347C,
-				C737D63DFE55BB209AB2E11C,
 				F07229BC8FA37FA976BF0D94,
 			);
 			name = "JUCE Library Code";
@@ -133,7 +126,6 @@
 				F33ECB6FB37E7E585468D8FB,
 				35F28871534FC764B87215C3,
 				02DE0E637463CC2DB082BCF0,
-				0567F9BA2315A4B9029E7BB6,
 				F8D5769ED6664A34DA4DD5A8,
 				D365763FECF0FD5DE794DB17,
 				A1273F0FE3DAEB681B103079,
@@ -220,7 +212,6 @@
 				36CE97E43C34C13866F276E4,
 				B9C579D46EDE61793D4D1228,
 				02DEB325A600DA7351FE771C,
-				919E053DF8FF2C20A4A410CC,
 			);
 			name = "JUCE Modules";
 			sourceTree = "<group>";
@@ -328,7 +319,6 @@
 				833CC811855030221848B50D,
 				AACAA472B2B558547DD80C5C,
 				3543A59B2EECBFE346B9976B,
-				B97F71AB37ED4BED7B77A35D,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,9 +371,9 @@
 				PRODUCT_NAME = "NativeNavigation";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NativeNavigation-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = "No";
 				SWIFT_VERSION = "4.0";
 				USE_HEADERMAP = NO;
-				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = OpenGLES;
 			};
 			name = Release;
 		};
@@ -483,9 +473,9 @@
 				PRODUCT_NAME = "NativeNavigation";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NativeNavigation-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = "No";
 				SWIFT_VERSION = "4.0";
 				USE_HEADERMAP = NO;
-				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = OpenGLES;
 			};
 			name = Debug;
 		};
