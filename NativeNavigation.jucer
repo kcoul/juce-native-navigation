@@ -39,9 +39,9 @@
     <XCODE_IPHONE targetFolder="Builds/iOS" iosDevelopmentTeamID="NQ2VLM7NM7">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" iosCompatibility="default" isDebug="1" optimisation="1"
-                       targetName="NativeNavigation" customXcodeFlags="SWIFT_VERSION=4.0&#10;SWIFT_OBJC_BRIDGING_HEADER='NativeNavigation-Bridging-Header.h'"/>
+                       targetName="NativeNavigation" customXcodeFlags="SWIFT_VERSION = 4.0,&#10;SWIFT_OBJC_BRIDGING_HEADER = NativeNavigation-Bridging-Header.h"/>
         <CONFIGURATION name="Release" iosCompatibility="default" isDebug="0" optimisation="3"
-                       targetName="NativeNavigation" customXcodeFlags="SWIFT_VERSION=4.0&#10;SWIFT_OBJC_BRIDGING_HEADER='NativeNavigation-Bridging-Header.h'"/>
+                       targetName="NativeNavigation" customXcodeFlags="SWIFT_VERSION = 4.0,&#10;SWIFT_OBJC_BRIDGING_HEADER = NativeNavigation-Bridging-Header.h"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../juce/modules"/>

@@ -380,8 +380,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.nativeNavigation;
 				PRODUCT_NAME = "NativeNavigation";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = "4.0
-SWIFT_OBJC_BRIDGING_HEADER='NativeNavigation-Bridging-Header.h'";
+				SWIFT_OBJC_BRIDGING_HEADER = "NativeNavigation-Bridging-Header.h";
+				SWIFT_VERSION = "4.0";
 				USE_HEADERMAP = NO;
 				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = OpenGLES;
 			};
@@ -482,8 +482,8 @@ SWIFT_OBJC_BRIDGING_HEADER='NativeNavigation-Bridging-Header.h'";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.nativeNavigation;
 				PRODUCT_NAME = "NativeNavigation";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = "4.0
-SWIFT_OBJC_BRIDGING_HEADER='NativeNavigation-Bridging-Header.h'";
+				SWIFT_OBJC_BRIDGING_HEADER = "NativeNavigation-Bridging-Header.h";
+				SWIFT_VERSION = "4.0";
 				USE_HEADERMAP = NO;
 				VALIDATE_WORKSPACE_SKIPPED_SDK_FRAMEWORKS = OpenGLES;
 			};
