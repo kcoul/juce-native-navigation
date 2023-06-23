@@ -32,8 +32,11 @@ class JuceViewController: UIViewController {
         setTitle()
 
         if contentView == nil {
-            contentView = UIView(frame: CGRectMake(0, navHeight, self.view.bounds.size.width, self.view.bounds.size.height - navHeight))
-            contentView.backgroundColor = UIColor.blackColor()
+            contentView = UIView(frame: CGRect(x: 0,
+                                               y: navHeight,
+                                               width: self.view.bounds.size.width,
+                                               height: self.view.bounds.size.height - navHeight))
+            contentView.backgroundColor = UIColor.black
         }
     }
     

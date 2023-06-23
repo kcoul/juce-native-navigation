@@ -29,3 +29,6 @@ DerivedData
 .idea/
 # Pods - for those of you who use CocoaPods
 Pods
+
+#NEW
+Builds/AndroidStudio

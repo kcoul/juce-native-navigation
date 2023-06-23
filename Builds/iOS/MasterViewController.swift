@@ -34,13 +34,13 @@ class MasterViewController: UITableViewController
         print ("loadData");
         let dataController = DataControllerObjC()
         let jsonString = dataController.getJsonData()
-        print (jsonString)
+        print (jsonString ?? "")
         
-        let jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
+        let jsonData = jsonString?.data(using: String.Encoding.utf8)
         
         if let jsonData = jsonData { // Check 1.
             do {
-                let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .AllowFragments)  // Check 2. and 3.
+                let jsonDictionary = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)  // Check 2. and 3.
                 print("Dictionary received")
                 
                 // Load into messages array
@@ -57,14 +57,14 @@ class MasterViewController: UITableViewController
         }
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return messages.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell     {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         
         if let message = self.messages[indexPath.row] as Message? {
             cell.textLabel!.text = message.title
@@ -76,7 +76,7 @@ class MasterViewController: UITableViewController
         
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let message = messages[indexPath.row]
         let dataController = DataControllerObjC()
@@ -84,7 +84,7 @@ class MasterViewController: UITableViewController
         dataController.setMessage(message.title, message.message)
         juceViewController!.setTitle()
 
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+        if UIDevice.current.userInterfaceIdiom == .pad {
             if #available(iOS 8.0, *) {
                 showDetailViewController(juceViewController!, sender: self)
             } else {
