@@ -23,15 +23,14 @@ MainWindow::MainWindow (String name)  : DocumentWindow (name,
                                                         Colours::lightgrey,
                                                         DocumentWindow::allButtons)
 {
-
-
     UIWindow* window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     window.backgroundColor = [UIColor grayColor];
     
     UIView* juceView = [[UIView alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     MainWindow::addComponentToUIView (mainComponent.getObject(), juceView);
 
-    JuceViewController* juceViewController = [[JuceViewController alloc] initWithContentView: juceView];
+    //JuceViewController* juceViewController = [[JuceViewController alloc] initWithContentView: juceView];
+    //JuceViewController* juceViewController = [[JuceViewController alloc] init];
     
     //juceViewController.contentView = juceView;
     UINavigationController* detailNavController;
@@ -41,16 +40,16 @@ MainWindow::MainWindow (String name)  : DocumentWindow (name,
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
-        detailNavController = [[UINavigationController alloc] initWithRootViewController: juceViewController];
+        //detailNavController = [[UINavigationController alloc] initWithRootViewController: juceViewController];
         UISplitViewController* splitVC = [[UISplitViewController alloc] init];
-        splitVC.viewControllers = [NSArray arrayWithObjects:masterNavController, detailNavController, nil];
+        //splitVC.viewControllers = [NSArray arrayWithObjects:masterNavController, detailNavController, nil];
         [window setRootViewController:splitVC];
     }
     else
     {
         //masterViewController.juceViewController = juceViewController;
         detailNavController = [[UINavigationController alloc] initWithRootViewController: masterViewController];
-        [detailNavController pushViewController:juceViewController animated:false];
+        //[detailNavController pushViewController:juceViewController animated:false];
         [window setRootViewController:detailNavController];
     }
     //[window addSubview:splitVC.view];
