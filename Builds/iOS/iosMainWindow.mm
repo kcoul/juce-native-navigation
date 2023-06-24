@@ -29,7 +29,7 @@ MainWindow::MainWindow (String name)  : DocumentWindow (name,
     UIView* juceView = [[UIView alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     MainWindow::addComponentToUIView (mainComponent.getObject(), juceView);
 
-    //JuceViewController* juceViewController = [[JuceViewController alloc] initWithContentView: juceView];
+    JuceViewController* juceViewController = [[JuceViewController alloc] initWithContentView: juceView];
     //JuceViewController* juceViewController = [[JuceViewController alloc] init];
     
     //juceViewController.contentView = juceView;
