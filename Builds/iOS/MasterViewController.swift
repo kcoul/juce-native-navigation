@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController
 {
 //    var dataController: DataControllerObjC
-    var juceViewController: JuceViewController?
+    @objc var juceViewController: JuceViewController?
     var messages = [Message]()
     
 

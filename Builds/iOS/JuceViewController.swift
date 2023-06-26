@@ -8,14 +8,14 @@
 
 import UIKit
 
-
 class JuceViewController: UIViewController {
     
     var navBar: UINavigationBar!
-    var contentView: UIView!
     var dataController: DataControllerObjC
     
-    init (contentView: UIView) {
+    @objc var contentView: UIView!
+    
+    @objc init (contentView: UIView) {
         self.contentView = contentView
         dataController = DataControllerObjC()
         super.init(nibName: nil, bundle:nil)
