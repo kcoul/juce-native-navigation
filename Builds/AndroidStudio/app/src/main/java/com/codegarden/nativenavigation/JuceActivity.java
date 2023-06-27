@@ -75,14 +75,20 @@ import androidx.appcompat.app.AppCompatActivity;
 //==============================================================================
 public class JuceActivity extends AppCompatActivity
 {
+    private native void constructNativeClass();
+    private native void destroyNativeClass();
+
+    private long cppCounterpartInstance;
+
     private native void appNewIntent (Intent intent);
     private native void appOnResume ();
+
+    private native void addRemoveJuceComponent(View container);
 
     private native void testCallback();
 
     private native String getJsonDataString();
     public native void setMessage (String message);
-
 
     public native void deliverMessage (long value);
     private native void launchApp (String appFile, String appDataDir);
@@ -105,31 +111,30 @@ public class JuceActivity extends AppCompatActivity
         viewHolder = new ViewHolder (this);
         setContentView (viewHolder);
 
-        // -- Custom native UI
+        constructNativeClass();
+
         setContentView(R.layout.main_activity);
+
         LinearLayout juceViewContainer = (LinearLayout) findViewById(R.id.juce_view_container);
+        addRemoveJuceComponent(juceViewContainer);
         juceViewContainer.addView(viewHolder);
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         messageTitle = new StringBuilder();
-        messageTitle.append("JUCE meets Android");
+        messageTitle.append("JUCE/Android View Interop");
         toolbar.setTitle(messageTitle);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own detail action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
-        initialiseData();
+        fab.setOnClickListener(view -> Snackbar.make(view,
+                        "This will disappear in just a moment...",
+                        Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
+
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.left_drawer);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
-
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -143,14 +148,18 @@ public class JuceActivity extends AppCompatActivity
                 toolbar.setTitle(drawerTitle);
             }
         };
-        drawerLayout.setDrawerListener(toggle);
+        drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        MessageListAdapter adapter = new MessageListAdapter(this, messages, messageTitle, drawerLayout);
-        recyclerView.setAdapter(adapter);
-        //--------------------------------------
+        //testCallback();
 
-        setVolumeControlStream (AudioManager.STREAM_MUSIC);
+        //initialiseData();
+
+        //This never did anything, but could be used to test one cb that was almost wired up in og
+        //MessageListAdapter adapter = new MessageListAdapter(this, messages, messageTitle, drawerLayout);
+        //recyclerView.setAdapter(adapter);
+
+
     }
 
     @Override
@@ -165,7 +174,7 @@ public class JuceActivity extends AppCompatActivity
     @Override
     protected void onPause()
     {
-        suspendApp();
+        //suspendApp();
         super.onPause();
     }
 

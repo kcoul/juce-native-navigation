@@ -6,33 +6,8 @@
   <MAINGROUP id="y4BUN6" name="NativeNavigation">
     <GROUP id="{E7EF3FA8-6B80-37FB-4D0A-E97DF6D9401D}" name="Source">
       <FILE id="CthAX9" name="Data.h" compile="0" resource="0" file="Source/Data.h"/>
-      <GROUP id="{D746C483-A088-3457-E2D2-B5ED98D8CB81}" name="iOS">
-        <FILE id="OgHG8l" name="DataController.cpp" compile="1" resource="0"
-              file="Builds/iOS/DataController.cpp"/>
-        <FILE id="eeAhoQ" name="DataController.h" compile="0" resource="0"
-              file="Builds/iOS/DataController.h"/>
-        <FILE id="DfOKVd" name="DataControllerObjC.h" compile="0" resource="0"
-              file="Builds/iOS/DataControllerObjC.h"/>
-        <FILE id="IEYECT" name="DataControllerObjC.mm" compile="1" resource="0"
-              file="Builds/iOS/DataControllerObjC.mm"/>
-        <FILE id="k8ARJE" name="iosMainWindow.h" compile="0" resource="0" file="Builds/iOS/iosMainWindow.h"/>
-        <FILE id="zPf0Qy" name="iosMainWindow.mm" compile="1" resource="0"
-              file="Builds/iOS/iosMainWindow.mm"/>
-        <FILE id="vDAbhU" name="JuceViewController.swift" compile="1" resource="0"
-              file="Builds/iOS/JuceViewController.swift"/>
-        <FILE id="kwZihV" name="MasterViewController.swift" compile="1" resource="0"
-              file="Builds/iOS/MasterViewController.swift"/>
-        <FILE id="gFD90g" name="MasterViewController.xib" compile="0" resource="1"
-              file="Builds/iOS/MasterViewController.xib"/>
-        <FILE id="VtfRtK" name="Message.swift" compile="1" resource="0" file="Builds/iOS/Message.swift"/>
-        <FILE id="eAIygW" name="NativeNavigation-Bridging-Header.h" compile="0"
-              resource="0" file="Builds/iOS/NativeNavigation-Bridging-Header.h"/>
-      </GROUP>
       <FILE id="KcwIra" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <FILE id="JZUwDP" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
-      <FILE id="VnREEN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
-      <FILE id="hBrjto" name="MainWindow.h" compile="0" resource="0" file="Source/MainWindow.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

@@ -8,7 +8,7 @@
 
 #include "JuceHeader.h"
 #include "DataController.h"
-#include "../../Source/MainComponent.h"
+#include "../../Source/MainComponent.cpp"
 #include "../../Source/Data.h"
 
 /**

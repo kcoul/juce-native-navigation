@@ -10,25 +10,17 @@
 		17E5928F67BC9740D4BE23DE /* IOKit.framework */ = {isa = PBXBuildFile; fileRef = C3AD77A0811DB733F1102C43; };
 		3543A59B2EECBFE346B9976B /* include_juce_gui_extra.mm */ = {isa = PBXBuildFile; fileRef = 84E8856EA6D4BB87CB87347C; };
 		37F721E8D1E606370A47A88B /* App */ = {isa = PBXBuildFile; fileRef = 59F750712DB15DB31185240F; };
-		53311D04367C20969CE2CA72 /* Main.cpp */ = {isa = PBXBuildFile; fileRef = 84C2234F816B2AF407789596; };
 		55FD303CA2F0938FFAC53979 /* include_juce_data_structures.mm */ = {isa = PBXBuildFile; fileRef = A094A8B6A46CF12C2EBD1F50; };
 		59682FA42D71D139D6328224 /* QuartzCore.framework */ = {isa = PBXBuildFile; fileRef = F8D5769ED6664A34DA4DD5A8; };
-		638D679CDC2121855EFD291E /* DataController.cpp */ = {isa = PBXBuildFile; fileRef = 4DA44756471A73857B92A4AF; };
 		67BA01DCB22EB8D10F660A2B /* include_juce_core.mm */ = {isa = PBXBuildFile; fileRef = 02A9F9A39F3024C563F693BF; };
-		809DD1FA6D75550857A845D9 /* BinaryData.cpp */ = {isa = PBXBuildFile; fileRef = 0EEB80135674A625D982F986; };
 		833CC811855030221848B50D /* include_juce_graphics.mm */ = {isa = PBXBuildFile; fileRef = E0E8FEE0C4F6DEB74EEB51DF; };
-		8CAB7018AE2DCA4965D709EC /* JuceViewController.swift */ = {isa = PBXBuildFile; fileRef = 2E071FEF3ADD1F51C85598BD; };
 		96F83B00359ABC1F775A2EDF /* WebKit.framework */ = {isa = PBXBuildFile; fileRef = A1273F0FE3DAEB681B103079; };
-		A01494C0C16F56C4AFF0FA06 /* DataControllerObjC.mm */ = {isa = PBXBuildFile; fileRef = 2CA3FCA994B06E22C30AAF9F; };
 		A2D03BBB293722EE6C4F1890 /* Foundation.framework */ = {isa = PBXBuildFile; fileRef = 02DE0E637463CC2DB082BCF0; };
 		AACAA472B2B558547DD80C5C /* include_juce_gui_basics.mm */ = {isa = PBXBuildFile; fileRef = CB84857B789A7E6EB92C7161; };
 		CB334B17EBD262C8C07584CE /* MainComponent.cpp */ = {isa = PBXBuildFile; fileRef = C6E348C1E4E413F3F8DDFA4A; };
-		E94E0758361636436ED7505D /* MasterViewController.swift */ = {isa = PBXBuildFile; fileRef = 0C7DD54010E7F8D01B89353E; };
 		EF456C678AC64E7830F311EA /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = BEFD99A4720E02F3DB161951; };
 		F2E2EC466AA14DB16B04D47D /* Cocoa.framework */ = {isa = PBXBuildFile; fileRef = 45090B40862465A59BF79A60; };
 		F45379AA4732ABC904BE076E /* RecentFilesMenuTemplate.nib */ = {isa = PBXBuildFile; fileRef = 516376BF113149DE9119B84C; };
-		F6047B520E6BD6E8B038EC12 /* iosMainWindow.mm */ = {isa = PBXBuildFile; fileRef = 8B9BA30FDE81F2D6317B28A1; };
-		FA101A4FE4E52E7BF7B59004 /* Message.swift */ = {isa = PBXBuildFile; fileRef = 74CD3F5EE04EDEFFF88D49F9; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,29 +29,14 @@
 		02DEB325A600DA7351FE771C /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = "~/repos/JUCE/modules/juce_gui_extra"; sourceTree = "<absolute>"; };
 		07949CC9FC448288A0CCF6F1 /* Data.h */ /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Data.h; path = ../../Source/Data.h; sourceTree = SOURCE_ROOT; };
 		0AA8EB8774D676B0A517B358 /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = "~/repos/JUCE/modules/juce_core"; sourceTree = "<absolute>"; };
-		0C7DD54010E7F8D01B89353E /* MasterViewController.swift */ /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = file.swift; name = MasterViewController.swift; path = ../iOS/MasterViewController.swift; sourceTree = SOURCE_ROOT; };
-		0EEB80135674A625D982F986 /* BinaryData.cpp */ /* BinaryData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = SOURCE_ROOT; };
-		2CA3FCA994B06E22C30AAF9F /* DataControllerObjC.mm */ /* DataControllerObjC.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = DataControllerObjC.mm; path = ../iOS/DataControllerObjC.mm; sourceTree = SOURCE_ROOT; };
-		2E071FEF3ADD1F51C85598BD /* JuceViewController.swift */ /* JuceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = file.swift; name = JuceViewController.swift; path = ../iOS/JuceViewController.swift; sourceTree = SOURCE_ROOT; };
 		36CE97E43C34C13866F276E4 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = "~/repos/JUCE/modules/juce_graphics"; sourceTree = "<absolute>"; };
 		45090B40862465A59BF79A60 /* Cocoa.framework */ /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		479CD67FB62A78C6977FBDD2 /* iosMainWindow.h */ /* iosMainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iosMainWindow.h; path = ../iOS/iosMainWindow.h; sourceTree = SOURCE_ROOT; };
 		49B49FF570551A6D1F42DB0A /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = "~/repos/JUCE/modules/juce_events"; sourceTree = "<absolute>"; };
-		4DA44756471A73857B92A4AF /* DataController.cpp */ /* DataController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DataController.cpp; path = ../iOS/DataController.cpp; sourceTree = SOURCE_ROOT; };
-		50FB6A992F118F91168B2E11 /* DataController.h */ /* DataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataController.h; path = ../iOS/DataController.h; sourceTree = SOURCE_ROOT; };
 		516376BF113149DE9119B84C /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
-		54CF5AA7BA65ED12B3FC1F27 /* BinaryData.h */ /* BinaryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BinaryData.h; path = ../../JuceLibraryCode/BinaryData.h; sourceTree = SOURCE_ROOT; };
 		59C220FEE2DAFD67C5CE59D4 /* AppConfig.h */ /* AppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppConfig.h; path = ../../JuceLibraryCode/AppConfig.h; sourceTree = SOURCE_ROOT; };
 		59F750712DB15DB31185240F /* App */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F74B26F5531951EE7E56033 /* MainWindow.h */ /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainWindow.h; path = ../../Source/MainWindow.h; sourceTree = SOURCE_ROOT; };
-		659D912A16AAC76DEFDBFA1C /* DataControllerObjC.h */ /* DataControllerObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataControllerObjC.h; path = ../iOS/DataControllerObjC.h; sourceTree = SOURCE_ROOT; };
-		74CD3F5EE04EDEFFF88D49F9 /* Message.swift */ /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = file.swift; name = Message.swift; path = ../iOS/Message.swift; sourceTree = SOURCE_ROOT; };
-		7AD96D5AA9A4C71E6D3CA0E2 /* NativeNavigation-Bridging-Header.h */ /* NativeNavigation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NativeNavigation-Bridging-Header.h"; path = "../iOS/NativeNavigation-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		84BD98723FC20DB1CAA53DC8 /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = "~/repos/JUCE/modules/juce_data_structures"; sourceTree = "<absolute>"; };
-		84C2234F816B2AF407789596 /* Main.cpp */ /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = ../../Source/Main.cpp; sourceTree = SOURCE_ROOT; };
-		84E734FA76FE9AE5031BEA02 /* MasterViewController.xib */ /* MasterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MasterViewController.xib; path = ../iOS/MasterViewController.xib; sourceTree = SOURCE_ROOT; };
 		84E8856EA6D4BB87CB87347C /* include_juce_gui_extra.mm */ /* include_juce_gui_extra.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_extra.mm; path = ../../JuceLibraryCode/include_juce_gui_extra.mm; sourceTree = SOURCE_ROOT; };
-		8B9BA30FDE81F2D6317B28A1 /* iosMainWindow.mm */ /* iosMainWindow.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = iosMainWindow.mm; path = ../iOS/iosMainWindow.mm; sourceTree = SOURCE_ROOT; };
 		A094A8B6A46CF12C2EBD1F50 /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
 		A1273F0FE3DAEB681B103079 /* WebKit.framework */ /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B9C579D46EDE61793D4D1228 /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = "~/repos/JUCE/modules/juce_gui_basics"; sourceTree = "<absolute>"; };
@@ -70,7 +47,6 @@
 		CB84857B789A7E6EB92C7161 /* include_juce_gui_basics.mm */ /* include_juce_gui_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_basics.mm; path = ../../JuceLibraryCode/include_juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
 		E0E8FEE0C4F6DEB74EEB51DF /* include_juce_graphics.mm */ /* include_juce_graphics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_graphics.mm; path = ../../JuceLibraryCode/include_juce_graphics.mm; sourceTree = SOURCE_ROOT; };
 		F07229BC8FA37FA976BF0D94 /* JuceHeader.h */ /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
-		F5B027690A14E387853102D7 /* MainComponent.h */ /* MainComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainComponent.h; path = ../../Source/MainComponent.h; sourceTree = SOURCE_ROOT; };
 		F8D5769ED6664A34DA4DD5A8 /* QuartzCore.framework */ /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -94,8 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				59C220FEE2DAFD67C5CE59D4,
-				0EEB80135674A625D982F986,
-				54CF5AA7BA65ED12B3FC1F27,
 				02A9F9A39F3024C563F693BF,
 				A094A8B6A46CF12C2EBD1F50,
 				BEFD99A4720E02F3DB161951,
@@ -144,31 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				07949CC9FC448288A0CCF6F1,
-				66BBAD216699951C0AB8A0E6,
 				C6E348C1E4E413F3F8DDFA4A,
-				F5B027690A14E387853102D7,
-				84C2234F816B2AF407789596,
-				5F74B26F5531951EE7E56033,
 			);
 			name = Source;
-			sourceTree = "<group>";
-		};
-		66BBAD216699951C0AB8A0E6 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				4DA44756471A73857B92A4AF,
-				50FB6A992F118F91168B2E11,
-				659D912A16AAC76DEFDBFA1C,
-				2CA3FCA994B06E22C30AAF9F,
-				479CD67FB62A78C6977FBDD2,
-				8B9BA30FDE81F2D6317B28A1,
-				2E071FEF3ADD1F51C85598BD,
-				0C7DD54010E7F8D01B89353E,
-				84E734FA76FE9AE5031BEA02,
-				74CD3F5EE04EDEFFF88D49F9,
-				7AD96D5AA9A4C71E6D3CA0E2,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		8706AEFF94EBFE5DBA16F007 /* Products */ = {
@@ -286,15 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				638D679CDC2121855EFD291E,
-				A01494C0C16F56C4AFF0FA06,
-				F6047B520E6BD6E8B038EC12,
-				8CAB7018AE2DCA4965D709EC,
-				E94E0758361636436ED7505D,
-				FA101A4FE4E52E7BF7B59004,
 				CB334B17EBD262C8C07584CE,
-				53311D04367C20969CE2CA72,
-				809DD1FA6D75550857A845D9,
 				67BA01DCB22EB8D10F660A2B,
 				55FD303CA2F0938FFAC53979,
 				EF456C678AC64E7830F311EA,

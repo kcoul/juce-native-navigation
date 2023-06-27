@@ -25,9 +25,9 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
 
     MessageListAdapter(JuceActivity activity, List<Message> messages, StringBuilder messageTitle, DrawerLayout drawerLayout){
         ref = activity;
-        this.messages = messages;
-        this.messageTitle = messageTitle;
-        this.drawerLayout = drawerLayout;
+        MessageListAdapter.messages = messages;
+        MessageListAdapter.messageTitle = messageTitle;
+        MessageListAdapter.drawerLayout = drawerLayout;
     }
 
     public void setOnItemClickListener(ClickListener clickListener) {
@@ -96,5 +96,4 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
             drawerLayout.closeDrawers();
         }
     }
-
 }
