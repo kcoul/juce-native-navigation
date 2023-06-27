@@ -8,7 +8,7 @@
     <key>CFBundleIconFile</key>
     <string></string>
     <key>CFBundleIdentifier</key>
-    <string>com.yourcompany.nativeNavigation</string>
+    <string>com.codegarden.nativenavigation</string>
     <key>CFBundleName</key>
     <string>NativeNavigation</string>
     <key>CFBundleDisplayName</key>

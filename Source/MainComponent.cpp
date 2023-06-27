@@ -8,24 +8,14 @@
 
 #include "MainComponent.h"
 
-#if defined(JUCE_ANDROID)
-
-namespace juce
-{
-
-#include "juce_android_JNIHelpers.h"
-//#include "../JuceLibraryCode/modules/juce_core/native/juce_android_JNIHelpers.h"
-
-}
-
-#endif
-
 //==============================================================================
 MainContentComponent::MainContentComponent()
 {
     setSize (600, 400);
 
-    message = "Hello world!";
+    title = "title";
+
+    message = "message";
 
     // Set up some initial dummy data (courtesy of http://www.json-generator.com)
     data = Data(String("[\n"
@@ -114,15 +104,10 @@ MainContentComponent::MainContentComponent()
                                "    \"message\": \"Pariatur ipsum qui eu sunt duis excepteur ipsum.\"\n"
                                "  }\n"
                                "]"));
-
-    // add #ifdef JUCE_ANDROID ?
-    //openGLContext.attachTo (*this);
-//    openGLContext.attachTo (*getTopLevelComponent());
 }
 
 MainContentComponent::~MainContentComponent()
 {
-//    openGLContext.detach();
 
 }
 
@@ -132,12 +117,12 @@ void MainContentComponent::paint (Graphics& g)
 
     g.setFont (Font (24.0f));
     g.setColour (Colours::orange);
-//    String title(data.getValueTree().getChild(0).getProperty(Ids::title).toString());
+    //String title(data.getValueTree().getChild(0).getProperty(Ids::title).toString());
     g.drawText (title, getLocalBounds(), Justification::centredTop, true);
 
     g.setFont (Font (16.0f));
     g.setColour (Colours::white);
-//    String message(data.getValueTree().getChild(0).getProperty(Ids::message).toString());
+    //String message(data.getValueTree().getChild(0).getProperty(Ids::message).toString());
     g.drawText (message, getLocalBounds(), Justification::centred, true);
 }
 
@@ -150,8 +135,38 @@ void MainContentComponent::resized()
 
 #if JUCE_ANDROID
 
-JUCE_JNI_CALLBACK (JUCE_ANDROID_ACTIVITY_CLASSNAME, getJsonDataBytes, jbyteArray, (JNIEnv* env, jclass))
+static void JNIEXPORT testCallbackJni()
 {
+    int i = 1;
+}
+
+#define JNI_CLASS_MEMBERS(METHOD, STATICMETHOD, FIELD, STATICFIELD, CALLBACK) //\
+     //CALLBACK (testCallbackJni, "testCallback", "()V)") //\                                                                         \
+     //CALLBACK (getJsonDataStringJni, "getJsonDataString", "(V)Ljava/lang/String;") \
+     //CALLBACK (setMessageJni,        "setMessage",        "(Ljava/lang/String;)V")
+
+DECLARE_JNI_CLASS (NativeNavigationJuceActivityJavaClass, "com/codegarden/nativenavigation/JuceActivity")
+#undef JNI_CLASS_MEMBERS
+
+static jstring JNIEXPORT getJsonDataStringJni(JNIEnv* env, jobject javaInstance)
+{
+    SharedResourcePointer<MainContentComponent> mainComponent;
+    String jsonData = mainComponent->data.toJson();
+    return javaString(jsonData);
+}
+
+static void JNIEXPORT setMessageJni(JNIEnv* env, jobject javaInstance, jstring message)
+{
+    SharedResourcePointer<MainContentComponent> mainComponent;
+
+    mainComponent->message = juceString (env, message);
+    mainComponent->repaint();
+}
+
+static jbyteArray getJsonDataBytes()
+{
+    auto* env = getEnv();
+
     SharedResourcePointer<MainContentComponent> mainComponent;
     String jsonData = mainComponent->data.toJson();
 
@@ -164,13 +179,4 @@ JUCE_JNI_CALLBACK (JUCE_ANDROID_ACTIVITY_CLASSNAME, getJsonDataBytes, jbyteArray
 
     return bytes;
 }
-
-JUCE_JNI_CALLBACK (JUCE_ANDROID_ACTIVITY_CLASSNAME, setMessage, void, (JNIEnv* env, jclass, jstring message))
-{
-    SharedResourcePointer<MainContentComponent> mainComponent;
-
-    mainComponent->message = juceString (env, message);
-    mainComponent->repaint();
-}
-
 #endif

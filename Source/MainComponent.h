@@ -9,7 +9,8 @@
 #ifndef MAINCOMPONENT_H_INCLUDED
 #define MAINCOMPONENT_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#define JUCE_CORE_INCLUDE_JNI_HELPERS 1
+#include <JuceHeader.h>
 #include "Data.h"
 
 //==============================================================================

@@ -367,7 +367,7 @@
 				LLVM_LTO = YES;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/repos/JUCE/modules";
 				OTHER_LDFLAGS = "-weak_framework Metal -weak_framework MetalKit -weak_framework UserNotifications";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.nativeNavigation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codegarden.nativenavigation;
 				PRODUCT_NAME = "NativeNavigation";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NativeNavigation-Bridging-Header.h";
@@ -469,7 +469,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/repos/JUCE/modules";
 				OTHER_LDFLAGS = "-weak_framework Metal -weak_framework MetalKit -weak_framework UserNotifications";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.nativeNavigation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codegarden.nativenavigation;
 				PRODUCT_NAME = "NativeNavigation";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NativeNavigation-Bridging-Header.h";

@@ -24,15 +24,15 @@
 
 package com.codegarden.nativenavigation;
 
-import android.support.design.widget.AppBarLayout;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Context;
@@ -40,9 +40,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Looper;
-import android.os.Handler;
-import android.os.ParcelUuid;
+
 import android.view.*;
 import android.view.inputmethod.BaseInputConnection;
 import android.view.inputmethod.EditorInfo;
@@ -57,10 +55,7 @@ import java.lang.Runnable;
 import java.lang.reflect.Type;
 import java.nio.charset.Charset;
 import java.util.List;
-import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.TimerTask;
 import java.io.*;
 import java.net.URL;
@@ -74,45 +69,35 @@ import android.widget.LinearLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+//import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 
 //==============================================================================
-public class JuceActivity   extends AppCompatActivity
+public class JuceActivity extends AppCompatActivity
 {
-    //==============================================================================
-    static
-    {
-        System.loadLibrary ("juce_jni");
-    }
+    private native void appNewIntent (Intent intent);
+    private native void appOnResume ();
 
-    //==============================================================================
+    private native void testCallback();
 
-    //==============================================================================
+    private native String getJsonDataString();
+    public native void setMessage (String message);
+
+
+    public native void deliverMessage (long value);
+    private native void launchApp (String appFile, String appDataDir);
+    private native void quitApp();
+    private native void suspendApp();
+    private native void resumeApp();
+    private native void setScreenSize (int screenWidth, int screenHeight, int dpi);
 
     private List<Message> messages;
     private String drawerTitle = "Messages";
     private StringBuilder messageTitle;
     private DrawerLayout drawerLayout;
 
-    private void initialiseData() {
-        Gson gson = new Gson();
-        messages = new ArrayList<>();
-
-        Type collectionType = new TypeToken<List<Message>>(){}.getType();
-        String json = JuceActivity.getJsonData();
-        Log.d("JSON", json);
-        messages = gson.fromJson(json, collectionType);
-    }
-
-    public static native void setMessage (String message);
-
-    public static String getJsonData()
-    {
-        return new String(getJsonDataBytes(), Charset.forName("UTF-8"));
-    }
-    private static native byte[] getJsonDataBytes();
-
     @Override
-    public void onCreate (Bundle savedInstanceState)
+    protected void onCreate (Bundle savedInstanceState)
     {
         super.onCreate (savedInstanceState);
 
@@ -161,7 +146,7 @@ public class JuceActivity   extends AppCompatActivity
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
-        MessageListAdapter adapter = new MessageListAdapter(messages, messageTitle, drawerLayout);
+        MessageListAdapter adapter = new MessageListAdapter(this, messages, messageTitle, drawerLayout);
         recyclerView.setAdapter(adapter);
         //--------------------------------------
 
@@ -188,7 +173,7 @@ public class JuceActivity   extends AppCompatActivity
     protected void onResume()
     {
         super.onResume();
-        resumeApp();
+        //resumeApp();
     }
 
     @Override
@@ -198,21 +183,28 @@ public class JuceActivity   extends AppCompatActivity
         setContentView (viewHolder);
     }
 
-    private void callAppLauncher()
-    {
-        launchApp (getApplicationInfo().publicSourceDir,
-                   getApplicationInfo().dataDir);
+    private void initialiseData() {
+        Gson gson = new Gson();
+        messages = new ArrayList<>();
+
+        Type collectionType = new TypeToken<List<Message>>(){}.getType();
+        String json = "";
+        //String json = getJsonData();
+        Log.d("JSON", json);
+        messages = gson.fromJson(json, collectionType);
     }
 
-    //==============================================================================
-    private native void launchApp (String appFile, String appDataDir);
-    private native void quitApp();
-    private native void suspendApp();
-    private native void resumeApp();
-    private native void setScreenSize (int screenWidth, int screenHeight, int dpi);
+    public String getJsonData()
+    {
+        return getJsonDataString();
+    }
 
-    //==============================================================================
-    public native void deliverMessage (long value);
+    private void callAppLauncher()
+    {
+        //launchApp (getApplicationInfo().publicSourceDir,
+        //           getApplicationInfo().dataDir);
+    }
+
     private android.os.Handler messageHandler = new android.os.Handler();
 
     public final void postMessage (long value)
@@ -267,7 +259,7 @@ public class JuceActivity   extends AppCompatActivity
 
         protected final void onLayout (boolean changed, int left, int top, int right, int bottom)
         {
-            setScreenSize (getWidth(), getHeight(), getDPI());
+            //setScreenSize (getWidth(), getHeight(), getDPI());
 
             if (isFirstResize)
             {
@@ -439,6 +431,15 @@ public class JuceActivity   extends AppCompatActivity
     public final class ComponentPeerView extends ViewGroup
                                          implements View.OnFocusChangeListener
     {
+        private native void handlePaint (long host, Canvas canvas, Paint paint);
+        private native void handleMouseDown (long host, int index, float x, float y, long time);
+        private native void handleMouseDrag (long host, int index, float x, float y, long time);
+        private native void handleMouseUp   (long host, int index, float x, float y, long time);
+        private native void handleKeyDown (long host, int keycode, int textchar);
+        private native void handleKeyUp (long host, int keycode, int textchar);
+        private native void viewSizeChanged (long host);
+        private native void focusChanged (long host, boolean hasFocus);
+
         public ComponentPeerView (Context context, boolean opaque_, long host)
         {
             super (context);
@@ -463,9 +464,6 @@ public class JuceActivity   extends AppCompatActivity
             paint.setColorFilter (new ColorMatrixColorFilter (colorMatrix));
         }
 
-        //==============================================================================
-        private native void handlePaint (long host, Canvas canvas, Paint paint);
-
         @Override
         public void onDraw (Canvas canvas)
         {
@@ -481,11 +479,6 @@ public class JuceActivity   extends AppCompatActivity
         private boolean opaque;
         private long host;
         private Paint paint = new Paint();
-
-        //==============================================================================
-        private native void handleMouseDown (long host, int index, float x, float y, long time);
-        private native void handleMouseDrag (long host, int index, float x, float y, long time);
-        private native void handleMouseUp   (long host, int index, float x, float y, long time);
 
         @Override
         public boolean onTouchEvent (MotionEvent event)
@@ -533,10 +526,6 @@ public class JuceActivity   extends AppCompatActivity
 
             return false;
         }
-
-        //==============================================================================
-        private native void handleKeyDown (long host, int keycode, int textchar);
-        private native void handleKeyUp (long host, int keycode, int textchar);
 
         public void showKeyboard (String type)
         {
@@ -625,16 +614,12 @@ public class JuceActivity   extends AppCompatActivity
                 requestTransparentRegion (getChildAt (i));
         }
 
-        private native void viewSizeChanged (long host);
-
         @Override
         public void onFocusChange (View v, boolean hasFocus)
         {
             if (v == this)
                 focusChanged (host, hasFocus);
         }
-
-        private native void focusChanged (long host, boolean hasFocus);
 
         public void setViewName (String newName)    {}
 
@@ -651,6 +636,12 @@ public class JuceActivity   extends AppCompatActivity
     public static class NativeSurfaceView    extends SurfaceView
                                           implements SurfaceHolder.Callback
     {
+        private native void dispatchDrawNative (long nativeContextPtr, Canvas canvas);
+        private native void surfaceCreatedNative (long nativeContextptr, SurfaceHolder holder);
+        private native void surfaceDestroyedNative (long nativeContextptr, SurfaceHolder holder);
+        private native void surfaceChangedNative (long nativeContextptr, SurfaceHolder holder,
+                                                  int format, int width, int height);
+
         private long nativeContext = 0;
 
         NativeSurfaceView (Context context, long nativeContextPtr)
@@ -710,13 +701,6 @@ public class JuceActivity   extends AppCompatActivity
             super.onDetachedFromWindow();
             getHolder().removeCallback (this);
         }
-
-        //==============================================================================
-        private native void dispatchDrawNative (long nativeContextPtr, Canvas canvas);
-        private native void surfaceCreatedNative (long nativeContextptr, SurfaceHolder holder);
-        private native void surfaceDestroyedNative (long nativeContextptr, SurfaceHolder holder);
-        private native void surfaceChangedNative (long nativeContextptr, SurfaceHolder holder,
-                                                  int format, int width, int height);
     }
 
     public NativeSurfaceView createNativeSurfaceView(long nativeSurfacePtr)
@@ -1103,6 +1087,8 @@ public class JuceActivity   extends AppCompatActivity
 
     private static class JuceThread extends Thread
     {
+        private native void runThread (long host);
+
         public JuceThread (long host)
         {
             _this = host;
@@ -1113,7 +1099,6 @@ public class JuceActivity   extends AppCompatActivity
             runThread(_this);
         }
 
-        private native void runThread (long host);
         private long _this;
     }
 
@@ -1121,6 +1106,5 @@ public class JuceActivity   extends AppCompatActivity
     {
         return new JuceThread(host);
     }
-
 }
 

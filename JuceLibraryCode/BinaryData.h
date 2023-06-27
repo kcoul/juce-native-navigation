@@ -9,7 +9,7 @@
 namespace BinaryData
 {
     extern const char*   MasterViewController_xib;
-    const int            MasterViewController_xibSize = 2976;
+    const int            MasterViewController_xibSize = 3301;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
     const int namedResourceListSize = 1;
