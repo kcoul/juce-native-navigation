@@ -1,17 +1,6 @@
-/*
-  ==============================================================================
+#pragma once
 
-    Data.h
-    Created: 3 Jun 2014 11:46:57pm
-    Author:  Adam Elemental
-
-  ==============================================================================
-*/
-
-#ifndef DATA_H_INCLUDED
-#define DATA_H_INCLUDED
-
-#include "../JuceLibraryCode/JuceHeader.h"
+#include <JuceHeader.h>
 
 namespace Ids
 {
@@ -189,6 +178,3 @@ private:
     ValueTree dataValueTree;
     var data;
 };
-
-
-#endif  // DATA_H_INCLUDED

@@ -1,11 +1,3 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-  ==============================================================================
-*/
-
 #define JUCE_CORE_INCLUDE_JNI_HELPERS 1
 
 #include <JuceHeader.h>
@@ -29,7 +21,6 @@ public:
         env->SetLongField (javaObject, NativeNavigationJuceActivityJavaClass.cppCounterpartInstance,
                            reinterpret_cast<jlong> (this));
 
-        // initialise the JUCE message manager!
         MessageManager::getInstance();
 
         title = "JUCE View";
@@ -62,8 +53,6 @@ public:
             removeFromDesktop();
         else
         {
-            setSize (600, 400); //How is size supposed to be negotiated???
-
             centreWithSize (getWidth(), getHeight());
             setVisible(true);
             addToDesktop(0, containerView);
