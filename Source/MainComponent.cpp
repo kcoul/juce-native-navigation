@@ -139,24 +139,6 @@ private:
     DECLARE_JNI_CLASS (NativeNavigationJuceActivityJavaClass, "com/codegarden/nativenavigation/JuceActivity")
 #undef JNI_CLASS_MEMBERS
 
-    /*
-    static jbyteArray getJsonDataBytes()
-    {
-        auto* env = getEnv();
-
-        SharedResourcePointer<MainContentComponent> mainComponent;
-        String jsonData = mainComponent->data.toJson();
-
-        DBG (jsonData);
-
-        int byteCount = jsonData.length();
-        const jbyte* nativeString = reinterpret_cast<const jbyte*> ((const char *) jsonData.toUTF8());
-        jbyteArray bytes = env->NewByteArray(byteCount);
-        env->SetByteArrayRegion(bytes, 0, byteCount, nativeString);
-
-        return bytes;
-    }
-    */
     String title;
     String message;
     Data data;
