@@ -51,13 +51,11 @@ public:
 
         if (result.wasOk())
         {
-
             dataValueTree = ValueTree (Ids::dataType);
             Array<var>* dataArray = dataVar.getArray();
 
             for (auto dataItem : *dataArray)
             {
-
                 ValueTree messageValueTree(Ids::messageType);
                 messageValueTree.setProperty(Ids::title, dataItem.getProperty(Ids::title, "Untitled"), nullptr);
                 messageValueTree.setProperty(Ids::message, dataItem.getProperty(Ids::message, "Empty message"), nullptr);

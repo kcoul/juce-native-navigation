@@ -11,15 +11,14 @@
 #include <JuceHeader.h>
 #include "Data.h"
 
+static String jsonData;
+
 class MainContentComponent : public Component
 {
 public:
     MainContentComponent()
     {
         setSize (600, 400);
-        title = "title";
-        message = "message";
-        data = Data(Data::getAndroidTestString());
     }
 
     MainContentComponent(jobject javaObject)
@@ -33,7 +32,9 @@ public:
         // initialise the JUCE message manager!
         MessageManager::getInstance();
 
-        MainContentComponent();
+        title = "title";
+        message = "message";
+        data = Data(Data::getAndroidTestString());
     }
 
     ~MainContentComponent()
@@ -92,37 +93,47 @@ private:
             myself->addRemoveJuceComponent (viewContainer);
     }
 
-    static void JNIEXPORT testCallbackJni(JNIEnv* env, jobject javaInstance)
+    static void JNIEXPORT methodANativeClassJni (JNIEnv* env, jobject javaInstance)
     {
         int i = 1;
+    }
+
+    static void JNIEXPORT methodBNativeClassJni (JNIEnv* env, jobject javaInstance)
+    {
+        int i = 1;
+    }
+
+    static jstring JNIEXPORT getJsonStringJni(JNIEnv* env, jobject javaInstance)
+    {
+        if (auto* myself = getCppInstance (env, javaInstance))
+        {
+            jsonData = myself->data.toJson();
+            return env->NewStringUTF(jsonData.toRawUTF8());
+        }
+    }
+
+    static void JNIEXPORT setMessageJni(JNIEnv* env, jobject javaInstance, jstring message)
+    {
+        if (auto* myself = getCppInstance (env, javaInstance))
+        {
+            myself->message = juceString(env, message);
+            myself->repaint();
+        }
     }
 
 #define JNI_CLASS_MEMBERS(METHOD, STATICMETHOD, FIELD, STATICFIELD, CALLBACK) \
      FIELD    (cppCounterpartInstance,    "cppCounterpartInstance", "J") \
      CALLBACK (constructNativeClassJni,   "constructNativeClass",   "()V") \
-     CALLBACK (destroyNativeClassJni,     "destroyNativeClass",     "()V") \
-     CALLBACK (addRemoveJuceComponentJni, "addRemoveJuceComponent", "(Landroid/view/View;)V") //\
-     CALLBACK (testCallbackJni,           "testCallback",           "()V)") //\                                                                         \
-     //CALLBACK (getJsonDataStringJni, "getJsonDataString", "(V)Ljava/lang/String;") \
-     //CALLBACK (setMessageJni,        "setMessage",        "(Ljava/lang/String;)V"
+     CALLBACK (destroyNativeClassJni,     "destroyNativeClass",     "()V")    \
+     CALLBACK (addRemoveJuceComponentJni, "addRemoveJuceComponent", "(Landroid/view/View;)V") \
+     CALLBACK (methodANativeClassJni,     "methodANativeClass",     "()V") \
+     CALLBACK (methodBNativeClassJni,     "methodBNativeClass",     "()V") \
+     CALLBACK (getJsonStringJni,          "getJsonString",          "()Ljava/lang/String;") \
+     CALLBACK (setMessageJni,             "setMessage",             "(Ljava/lang/String;)V")
 
     DECLARE_JNI_CLASS (NativeNavigationJuceActivityJavaClass, "com/codegarden/nativenavigation/JuceActivity")
 #undef JNI_CLASS_MEMBERS
 
-    static jstring JNIEXPORT getJsonDataStringJni(JNIEnv* env, jobject javaInstance)
-    {
-        SharedResourcePointer<MainContentComponent> mainComponent;
-        String jsonData = mainComponent->data.toJson();
-        return javaString(jsonData);
-    }
-
-    static void JNIEXPORT setMessageJni(JNIEnv* env, jobject javaInstance, jstring message)
-    {
-        SharedResourcePointer<MainContentComponent> mainComponent;
-
-        mainComponent->message = juceString (env, message);
-        mainComponent->repaint();
-    }
     /*
     static jbyteArray getJsonDataBytes()
     {

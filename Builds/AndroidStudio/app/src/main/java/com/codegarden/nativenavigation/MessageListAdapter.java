@@ -89,8 +89,7 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
         public void onClick(View view) {
             //clickListener.onItemClick(getPosition(), view);
             Log.d("MessageListAdapter", "row " + getAdapterPosition() + " clicked");
-            //activityRef.setMessage(messages.get(getAdapterPosition()).message);
-            //activityRef.setMessage("My new message");
+            activityRef.setMessage(messages.get(getAdapterPosition()).message);
             messageTitle.setLength(0);
             messageTitle.append(messages.get(getAdapterPosition()).title);
             drawerLayout.closeDrawers();

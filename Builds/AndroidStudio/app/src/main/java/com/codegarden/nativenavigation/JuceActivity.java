@@ -53,14 +53,12 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import java.lang.Runnable;
 import java.lang.reflect.Type;
-import java.nio.charset.Charset;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.TimerTask;
 import java.io.*;
 import java.net.URL;
 import java.net.HttpURLConnection;
-import android.media.AudioManager;
 import android.media.MediaScannerConnection;
 import android.media.MediaScannerConnection.MediaScannerConnectionClient;
 
@@ -78,16 +76,21 @@ public class JuceActivity extends AppCompatActivity
     private native void constructNativeClass();
     private native void destroyNativeClass();
 
+    private native void addRemoveJuceComponent(View container);
+
+    private native void methodANativeClass();
+    private native void methodBNativeClass();
+
     private long cppCounterpartInstance;
 
     private native void appNewIntent (Intent intent);
     private native void appOnResume ();
 
-    private native void addRemoveJuceComponent(View container);
+
 
     private native void testCallback();
 
-    private native String getJsonDataString();
+    private native String getJsonString();
     public native void setMessage (String message);
 
     public native void deliverMessage (long value);
@@ -151,13 +154,15 @@ public class JuceActivity extends AppCompatActivity
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        //testCallback();
+        initialiseData();
 
-        //initialiseData();
+        //methodANativeClass();
+        //methodBNativeClass();
 
-        //This never did anything, but could be used to test one cb that was almost wired up in og
-        //MessageListAdapter adapter = new MessageListAdapter(this, messages, messageTitle, drawerLayout);
-        //recyclerView.setAdapter(adapter);
+        //setMessage("testing 1 2 3");
+
+        MessageListAdapter adapter = new MessageListAdapter(this, messages, messageTitle, drawerLayout);
+        recyclerView.setAdapter(adapter);
 
 
     }
@@ -197,15 +202,14 @@ public class JuceActivity extends AppCompatActivity
         messages = new ArrayList<>();
 
         Type collectionType = new TypeToken<List<Message>>(){}.getType();
-        String json = "";
-        //String json = getJsonData();
+        String json = getJsonData();
         Log.d("JSON", json);
         messages = gson.fromJson(json, collectionType);
     }
 
     public String getJsonData()
     {
-        return getJsonDataString();
+        return getJsonString();
     }
 
     private void callAppLauncher()
