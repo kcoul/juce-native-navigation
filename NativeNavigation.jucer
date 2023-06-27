@@ -35,7 +35,7 @@
                    androidActivitySubClassName="com.codegarden.nativenavigation.JuceActivity"
                    toolset="" androidNdkPlatformVersion="19" androidBluetoothScanNeeded="1"
                    androidBluetoothAdvertiseNeeded="1" androidBluetoothConnectNeeded="1"
-                   androidDependencies="implementation 'com.google.code.gson:gson:2.8.7'&#10;implementation 'com.google.android.material:material:1.0.0'&#10;implementation 'androidx.appcompat:appcompat:1.1.0'"
+                   androidDependencies="implementation 'com.google.code.gson:gson:2.8.7'&#10;implementation 'com.google.android.material:material:1.0.0'&#10;implementation 'androidx.appcompat:appcompat:1.1.0'&#10;implementation &quot;androidx.constraintlayout:constraintlayout:2.1.0&quot;"
                    androidTheme="@style/Theme.AppCompat.Light.NoActionBar">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="NativeNavigation"/>

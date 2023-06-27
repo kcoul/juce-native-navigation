@@ -18,7 +18,7 @@ class MainContentComponent : public Component
 public:
     MainContentComponent()
     {
-        setSize (600, 400);
+
     }
 
     MainContentComponent(jobject javaObject)
@@ -32,8 +32,8 @@ public:
         // initialise the JUCE message manager!
         MessageManager::getInstance();
 
-        title = "title";
-        message = "message";
+        title = "JUCE View";
+        message = "init";
         data = Data(Data::getAndroidTestString());
     }
 
@@ -47,11 +47,10 @@ public:
         g.fillAll (Colour (0xff001F36));
 
         g.setFont (Font (24.0f));
-        g.setColour (Colours::orange);
+        g.setColour (Colours::white);
         g.drawText (title, getLocalBounds(), Justification::centredTop, true);
 
         g.setFont (Font (16.0f));
-        g.setColour (Colours::white);
         g.drawText (message, getLocalBounds(), Justification::centred, true);
     }
 
@@ -59,10 +58,16 @@ public:
 
     void addRemoveJuceComponent (jobject containerView)
     {
-        if (juceComponent.getPeer() != nullptr)
-            juceComponent.removeFromDesktop();
+        if (getPeer() != nullptr)
+            removeFromDesktop();
         else
-            juceComponent.addToDesktop(0, containerView);
+        {
+            setSize (600, 400); //How is size supposed to be negotiated???
+
+            centreWithSize (getWidth(), getHeight());
+            setVisible(true);
+            addToDesktop(0, containerView);
+        }
     }
 
 private:

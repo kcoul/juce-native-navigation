@@ -110,17 +110,12 @@ public class JuceActivity extends AppCompatActivity
     {
         super.onCreate (savedInstanceState);
 
-        isScreenSaverEnabled = true;
+        constructNativeClass();
+
         viewHolder = new ViewHolder (this);
         setContentView (viewHolder);
 
-        constructNativeClass();
-
         setContentView(R.layout.main_activity);
-
-        LinearLayout juceViewContainer = (LinearLayout) findViewById(R.id.juce_view_container);
-        addRemoveJuceComponent(juceViewContainer);
-        juceViewContainer.addView(viewHolder);
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         messageTitle = new StringBuilder();
@@ -167,6 +162,11 @@ public class JuceActivity extends AppCompatActivity
 
     }
 
+    public void addJuceComponentButtonClicked(View sender)
+    {
+        addRemoveJuceComponent(findViewById(R.id.juceStage));
+    }
+
     @Override
     protected void onDestroy()
     {
@@ -194,7 +194,7 @@ public class JuceActivity extends AppCompatActivity
     public void onConfigurationChanged (Configuration cfg)
     {
         super.onConfigurationChanged (cfg);
-        setContentView (viewHolder);
+        //setContentView (viewHolder);
     }
 
     private void initialiseData() {
@@ -210,12 +210,6 @@ public class JuceActivity extends AppCompatActivity
     public String getJsonData()
     {
         return getJsonString();
-    }
-
-    private void callAppLauncher()
-    {
-        //launchApp (getApplicationInfo().publicSourceDir,
-        //           getApplicationInfo().dataDir);
     }
 
     private android.os.Handler messageHandler = new android.os.Handler();
@@ -272,13 +266,7 @@ public class JuceActivity extends AppCompatActivity
 
         protected final void onLayout (boolean changed, int left, int top, int right, int bottom)
         {
-            //setScreenSize (getWidth(), getHeight(), getDPI());
 
-            if (isFirstResize)
-            {
-                isFirstResize = false;
-                callAppLauncher();
-            }
         }
 
         private final int getDPI()
